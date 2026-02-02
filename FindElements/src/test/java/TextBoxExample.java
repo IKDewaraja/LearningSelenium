@@ -14,16 +14,20 @@ public class TextBoxExample {
 
 
     @BeforeMethod
-    public void openLinkTestPage(){
+    public void openLinkTestPage() throws InterruptedException {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.leafground.com/input.xhtml;jsessionid=node0wl1fpno4byfhwm6zcrfka0aq11902207.node0");
+        driver.get("https://www.leafground.com/input.xhtml");
+
+        //wait
+        Thread.sleep(3000);
+
 
     }
 
 
     @Test
-    public void textBoxTests(){
+    public void textBoxTests() throws InterruptedException {
 
         //01. Type your name
         WebElement name = driver.findElement(By.id("j_idt88:name"));
@@ -38,7 +42,10 @@ public class TextBoxExample {
 
         //03.verify if text box is disabled
         boolean enabled = driver.findElement(By.name("j_idt88:name")).isEnabled();
-        System.out.println("Is Text Box enabled"  +enabled);
+        System.out.println("Is Text Box enabled :"  +enabled);
+
+        //wait
+        Thread.sleep(3000);
 
 
         //04.clear the typed text
