@@ -11,7 +11,7 @@ public class ButtonExample {
 
 
     @BeforeMethod
-    public void openLinkTestPage(){
+    public void buttonTestPage(){
         driver = new ChromeDriver();
 
         Dimension newSize = new Dimension(800, 600);
@@ -35,7 +35,8 @@ public class ButtonExample {
                System.out.println("Actual Title is not same as expected");
            }
 
-           //
+
+
 
       //  Assert.assertEquals(driver.getTitle(), expectedTitle, "Title does not match");
 
